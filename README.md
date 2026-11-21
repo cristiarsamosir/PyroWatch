@@ -1,6 +1,6 @@
-# PyroWatch
+# PyroWatch-ChaosBench
 
-Subseasonal wildfire prediction using [ChaosBench](https://github.com/leap-stc/ChaosBench).
+A research project group working on subseasonal wildfire prediction using [ChaosBench](https://github.com/leap-stc/ChaosBench).
 
 ## What's in here
 
@@ -10,7 +10,7 @@ notebooks/01_chaosbench_to_gcs.ipynb  runs the data step
 scripts/chaosbench/                   download, upload and verify scripts
 ```
 
-## Get the data
+## Option 1: Try to get the data on your own
 
 Runs on the LEAP-Pangeo JupyterHub. You need write access to
 `gs://leap-persistent/<your-user>/`.
@@ -35,6 +35,20 @@ gs://leap-persistent/<your-user>/chaosbench/
   climatology/   era5/   lra5/   oras5/
 ```
 
+## Option 2: Access directly from GCS without downloading it
+
+This is only applicable for LEAP-Pangeo member. Access it by:
+1. In a Hub terminal:
+   ```bash
+   gcloud storage ls gs://leap-persistent/cristiarsamosir/chaosbench/
+   ```
+   If it lists `era5/`, `lra5/`, `oras5/`, and `climatology/`, it works.
+
+2. Test reading the data
+   ```python
+   import xarray as xr
+   ds = xr.open_zarr("gs://leap-persistent/cristiarsamosir/chaosbench/era5/era5_full_1.5deg_19791208.zarr")
+   ```
 ### Note on data size
 
 | Dataset | Download (archive) | In the bucket |
@@ -44,6 +58,8 @@ gs://leap-persistent/<your-user>/chaosbench/
 | `oras5` | 34.2 GB| 16,436 day folders |
 | `climatology` | 9.21 GB | about 8,077 files |
 
+### Rules to keep 
+Once you do your data cleaning or analysis, save your own results under your own folder (for example gs://leap-persistent/<their-user>/pyrowatch/) and the path can be shared to our team.
 
 ## References
 
