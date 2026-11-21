@@ -1,0 +1,5 @@
+
+notebooks/transfer.log
+*.log
+.ipynb_checkpoints/
+__pycache__/
