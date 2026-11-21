@@ -37,12 +37,12 @@ gs://leap-persistent/<your-user>/chaosbench/
 
 ### Note on data size
 
-| Dataset | Download (archive) | After extracting | In the bucket |
-|---|---|---|---|
-| `era5` | about 44.7 GB | about 48-50 GB | 16,436 day folders |
-| `lra5` | 19.91 GB | not measured | 16,436 day folders |
-| `oras5` | not measured | not measured | 16,436 day folders |
-| `climatology` | 9.21 GB | not measured | about 8,077 files |
+| Dataset | Download (archive) | In the bucket |
+|---|---|---|
+| `era5` | about 44.7 GB | 16,436 day folders |
+| `lra5` | 19.91 GB | 16,436 day folders |
+| `oras5` | 34.2 GB| 16,436 day folders |
+| `climatology` | 9.21 GB | about 8,077 files |
 
 
 ## References
